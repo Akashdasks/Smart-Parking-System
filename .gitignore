@@ -1,0 +1,14 @@
+# Backend
+smart-parking-back-end/node_modules/
+smart-parking-back-end/.env
+
+# Frontend
+smart-parking-front-end/node_modules/
+smart-parking-front-end/.env
+smart-parking-front-end/build/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,63 @@
+.parking-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.parking-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid #2563eb; /* blue border on hover */
+}
+
+/* Header */
+.parking-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.parking-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937; /* dark gray */
+}
+
+/* AI Badge */
+.ai-badge {
+  background-color: #facc15; /* yellow-400 */
+  color: #1f2937;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.375rem;
+}
+
+/* Body */
+.parking-address {
+  font-size: 0.9rem;
+  color: #4b5563; /* gray-700 */
+  margin-bottom: 0.25rem;
+}
+
+.parking-price {
+  font-weight: 500;
+  color: #2563eb; /* blue-600 */
+  margin-bottom: 0.25rem;
+}
+
+.parking-slots {
+  font-size: 0.85rem;
+  color: #6b7280; /* gray-500 */
+}
+
+/* AI card glow */
+.ai-card {
+  border: 2px solid #fbbf24; /* yellow border */
+  box-shadow: 0 6px 18px rgba(251, 191, 36, 0.4);
+}

@@ -1,0 +1,172 @@
+.owner-home {
+  padding: 2rem;
+  background: #f8fafc; /* lighter background */
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.owner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.owner-header h2 {
+  font-size: 1.8rem;
+  color: #1f2937; /* softer dark instead of bright blue */
+}
+
+.add-parking-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #3b82f6; /* primary button blue */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.add-parking-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  margin-top: 3rem;
+  color: #374151; /* softer dark text */
+}
+
+.primary-btn {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b82f6;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.primary-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Parking grid */
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.parking-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.parking-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.parking-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2937; /* dark gray instead of blue */
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+/* Address */
+.address {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.stats input {
+  width: 70px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+/* Price */
+.price {
+  font-weight: 600;
+  color: #2563eb; /* keep only small accent blue */
+  margin-bottom: 1rem;
+}
+
+/* Actions */
+.card-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.edit-btn {
+  background-color: #60a5fa; /* lighter blue */
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #3b82f6; /* slightly darker on hover */
+}
+
+.save-btn {
+  background-color: #16a34a;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background-color: #15803d;
+}
+
+.cancel-btn {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background-color: #dc2626;
+}
+
+/* Loader */
+.loader {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1.2rem;
+  color: #3b82f6; /* keep a subtle blue accent */
+}
+
+.error {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1.2rem;
+  color: #ef4444;
+}

@@ -1,0 +1,121 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(
+    90deg,
+    #1e3a8a,
+    #3b82f6
+  ); /* smooth blue gradient */
+  color: #f3f4f6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo & Brand */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.navbar-left .logo {
+  color: #bfdbfe; /* soft light blue */
+}
+.navbar-left .brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  color: #e0f2fe; /* very light blue text */
+}
+
+/* Search Bar */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1); /* soft translucent */
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+.navbar-search:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.navbar-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: 0.5rem;
+  color: #f3f4f6;
+  width: 200px;
+  transition: width 0.3s;
+}
+.navbar-search input::placeholder {
+  color: #cbd5e1; /* soft gray-blue */
+}
+.navbar-search input:focus {
+  width: 280px;
+}
+
+/* Navbar Buttons */
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Primary Buttons */
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #60a5fa
+  ); /* soft blue gradient */
+  border: none;
+  color: #f3f4f6;
+  padding: 0.45rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+.nav-btn:hover {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Danger / Logout Buttons */
+.nav-btn.danger {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6
+  ); /* softer blue for logout */
+}
+.nav-btn.danger:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Responsive: collapse search on small screens */
+@media (max-width: 768px) {
+  .navbar-search {
+    display: none;
+  }
+  .nav-btn {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+}

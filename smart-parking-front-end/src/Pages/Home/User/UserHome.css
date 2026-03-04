@@ -1,0 +1,78 @@
+.map-container {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 300px; /* smaller map */
+  margin-bottom: 2rem; /* space below map */
+}
+
+/* Parking list */
+.parking-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* AI section */
+.ai-section {
+  width: 280px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 50;
+  top: 8rem; /* push down so it doesn’t overlap header */
+}
+
+/* Filter buttons */
+.filter-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.filter-btn.active {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: white;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+}
+.filter-btn.inactive {
+  background: #e2e8f0;
+  color: #1e40af;
+}
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+}
+/* Slide-in animation from right */
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.ai-section {
+  width: 280px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 50;
+  position: fixed;
+  top: 20%; /* adjust vertical position */
+  right: 1rem;
+  animation: slide-in-right 0.5s ease forwards;
+}

@@ -1,0 +1,168 @@
+.parking-details-page {
+  min-height: 100vh;
+  background: #f4f6fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.parking-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.parking-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.parking-address {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.info-grid div {
+  background: #f1f3f8;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.info-grid span {
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
+
+.info-grid strong {
+  font-size: 16px;
+  color: #111;
+}
+
+.booking-form {
+  margin-top: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4f46e5;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.book-btn:hover {
+  background: #4338ca;
+}
+
+.book-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.sold-out {
+  text-align: center;
+  margin-top: 10px;
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.loading-text {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 16px;
+}
+.qr-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.qr-modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.qr-modal-content img {
+  width: 200px;
+  height: 200px;
+  margin: 20px 0;
+}
+
+.qr-modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.confirm-btn {
+  background: #16a34a;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #dc2626;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
