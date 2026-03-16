@@ -4,7 +4,7 @@ import Signup from './Pages/Signup/Signup';
 import OwnerHome from './Pages/Home/owner/owner';
 import Navbar from './components/Navbar/Navbar';
 import Addparking from './Pages/Addparking/Addparking';
-import UserHome from './Pages/Home/User/Userhome';
+import UserHome from './Pages/Home/User/UserHome';
 import ParkingDetails from './Pages/Parking/ParkingDetails';
 import ViewProfile from './Pages/Profile/ViewProfile';
 import EditProfile from './Pages/Profile/EditProfile';
