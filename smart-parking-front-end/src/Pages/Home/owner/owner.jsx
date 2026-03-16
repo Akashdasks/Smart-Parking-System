@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Plus, Edit2, Save, X } from 'lucide-react';
 import axios from '../../../utils/axios';
-import './Owner.css';
+import './owner.css';
 
 const OwnerHome = () => {
   const [parkings, setParkings] = useState([]);
