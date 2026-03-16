@@ -1,12 +1,9 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 mongoose
-  .connect('mongodb://localhost:27017/smart-parking')
-  .then(() => {
-    console.log('Db is Connected');
-  })
-  .catch(e => {
-    console.log(e);
-  });
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log('Db is Connected'))
+  .catch(e => console.log(e));
 
 module.exports = mongoose;
