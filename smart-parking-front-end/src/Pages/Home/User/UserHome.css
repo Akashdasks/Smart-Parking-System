@@ -1,78 +1,156 @@
-.map-container {
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: 300px; /* smaller map */
-  margin-bottom: 2rem; /* space below map */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+.user-home {
+  min-height: 100vh;
+  background: #080c14;
+  padding: 24px;
+  font-family: 'DM Sans', sans-serif;
+  color: #fff;
 }
 
-/* Parking list */
+.user-home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.user-home-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+.user-home-title span {
+  color: #2563eb;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+}
+
+.filter-btn.active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+}
+
+.filter-btn:hover {
+  background: rgba(37, 99, 235, 0.15);
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.map-container {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 24px;
+  height: 320px;
+}
+
 .parking-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
-/* AI section */
-.ai-section {
-  width: 280px;
-  max-height: 60vh;
-  overflow-y: auto;
-  background: #ffffff;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  z-index: 50;
-  top: 8rem; /* push down so it doesn’t overlap header */
+.no-parkings {
+  text-align: center;
+  color: #475569;
+  padding: 40px;
+  font-size: 0.95rem;
 }
 
-/* Filter buttons */
-.filter-btn {
-  padding: 0.5rem 1.2rem;
-  border-radius: 999px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
+.loading {
+  text-align: center;
+  color: #475569;
+  padding: 40px;
 }
-.filter-btn.active {
-  background: linear-gradient(135deg, #3b82f6, #60a5fa);
-  color: white;
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
-}
-.filter-btn.inactive {
-  background: #e2e8f0;
-  color: #1e40af;
-}
-.filter-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
-}
-/* Slide-in animation from right */
+
+/* AI Section */
 @keyframes slide-in-right {
-  0% {
-    transform: translateX(100%);
+  from {
+    transform: translateX(110%);
     opacity: 0;
   }
-  100% {
+  to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
 .ai-section {
-  width: 280px;
-  max-height: 60vh;
-  overflow-y: auto;
-  background: #ffffff;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  z-index: 50;
   position: fixed;
-  top: 20%; /* adjust vertical position */
-  right: 1rem;
-  animation: slide-in-right 0.5s ease forwards;
+  top: 80px;
+  right: 20px;
+  width: 300px;
+  max-height: 65vh;
+  overflow-y: auto;
+  background: #0f1623;
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(37, 99, 235, 0.1);
+  z-index: 50;
+  animation: slide-in-right 0.4s ease forwards;
+}
+
+.ai-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.ai-section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-section-title span {
+  color: #2563eb;
+}
+
+.close-btn {
+  cursor: pointer;
+  color: #475569;
+  font-size: 1rem;
+  transition: color 0.2s;
+  padding: 4px;
+}
+
+.close-btn:hover {
+  color: #fff;
+}
+
+.ai-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

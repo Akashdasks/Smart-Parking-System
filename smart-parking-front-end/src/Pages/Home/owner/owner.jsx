@@ -67,9 +67,6 @@ const OwnerHome = () => {
       {parkings.length === 0 ? (
         <div className="empty-state">
           <p>No parking places added yet</p>
-          <Link to="/addparking">
-            <button className="primary-btn">Add Your First Parking</button>
-          </Link>
         </div>
       ) : (
         <div className="parking-grid">

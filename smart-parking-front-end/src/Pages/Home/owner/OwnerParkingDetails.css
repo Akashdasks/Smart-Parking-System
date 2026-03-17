@@ -1,80 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
 .owner-parking-page {
-  padding: 2rem;
-  background: #f8fafc;
+  padding: 32px 24px;
+  background: #080c14;
   min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   align-items: center;
+  gap: 24px;
 }
 
-/* Card */
 .details-card {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 32px;
   width: 100%;
   max-width: 600px;
+  animation: fadeUp 0.5s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .details-card h2 {
+  font-family: 'Syne', sans-serif;
   font-size: 1.8rem;
-  color: #1f2937;
-  margin-bottom: 1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
 }
 
 .details-card p {
-  font-size: 1rem;
-  color: #374151;
-  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Buttons */
+.details-card p b {
+  color: #94a3b8;
+  margin-right: 8px;
+}
+
 .action-buttons {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 .action-buttons button {
   flex: 1;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 0.95rem;
   font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
   cursor: pointer;
   border: none;
-  transition: 0.2s;
+  transition: all 0.2s ease;
 }
 
 .edit-btn {
-  background-color: #60a5fa;
-  color: #fff;
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(37, 99, 235, 0.3) !important;
 }
 
 .edit-btn:hover {
-  background-color: #3b82f6;
+  background: rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
 }
 
 .delete-btn {
-  background-color: #ef4444;
-  color: #fff;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
 }
 
 .delete-btn:hover {
-  background-color: #dc2626;
+  background: rgba(239, 68, 68, 0.2);
+  transform: translateY(-1px);
 }
 
-/* Map */
 .map-wrapper {
   width: 100%;
   max-width: 800px;
-  height: 400px; /* fixed height so Leaflet can render */
-  border-radius: 12px;
+  height: 380px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .parking-map {
@@ -82,67 +112,75 @@
   height: 100%;
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
+  backdrop-filter: blur(4px);
 }
 
 .modal-box {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
+  background: #0f1623;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 32px;
+  border-radius: 20px;
   max-width: 400px;
   width: 90%;
   text-align: center;
+  animation: fadeUp 0.3s ease;
 }
 
 .modal-box h3 {
-  font-size: 1.5rem;
-  color: #1f2937;
-  margin-bottom: 1rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 .modal-box p {
-  font-size: 1rem;
-  color: #374151;
-  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 24px;
 }
 
 .modal-actions {
   display: flex;
-  gap: 1rem;
+  gap: 12px;
 }
 
 .modal-actions button {
   flex: 1;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 12px;
   font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
   cursor: pointer;
   border: none;
-  transition: 0.2s;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
 }
 
 .cancel-btn {
-  background-color: #9ca3af;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 .cancel-btn:hover {
-  background-color: #6b7280;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .confirm-btn {
-  background-color: #ef4444;
-  color: #fff;
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
 }
 
 .confirm-btn:hover {
-  background-color: #dc2626;
+  background: rgba(239, 68, 68, 0.25);
 }

@@ -1,121 +1,122 @@
-/* Navbar Container */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 1.5rem;
-  background: linear-gradient(
-    90deg,
-    #1e3a8a,
-    #3b82f6
-  ); /* smooth blue gradient */
-  color: #f3f4f6;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0 24px;
+  height: 64px;
+  background: #0d1321;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   position: sticky;
   top: 0;
   z-index: 100;
-  font-family: 'Poppins', sans-serif;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'DM Sans', sans-serif;
 }
 
-/* Logo & Brand */
 .navbar-left {
   display: flex;
   align-items: center;
+  gap: 10px;
   cursor: pointer;
 }
+
 .navbar-left .logo {
-  color: #bfdbfe; /* soft light blue */
-}
-.navbar-left .brand {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-left: 0.5rem;
-  color: #e0f2fe; /* very light blue text */
+  color: #2563eb;
 }
 
-/* Search Bar */
+.navbar-left .brand {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
 .navbar-search {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.1); /* soft translucent */
-  padding: 0.35rem 0.8rem;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 16px;
   border-radius: 999px;
-  margin-right: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  color: #64748b;
 }
+
 .navbar-search:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(37, 99, 235, 0.4);
+  background: rgba(37, 99, 235, 0.05);
 }
+
 .navbar-search input {
   background: transparent;
   border: none;
   outline: none;
-  margin-left: 0.5rem;
-  color: #f3f4f6;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
   width: 200px;
-  transition: width 0.3s;
-}
-.navbar-search input::placeholder {
-  color: #cbd5e1; /* soft gray-blue */
-}
-.navbar-search input:focus {
-  width: 280px;
+  transition: width 0.3s ease;
 }
 
-/* Navbar Buttons */
+.navbar-search input::placeholder {
+  color: #334155;
+}
+
+.navbar-search input:focus {
+  width: 260px;
+}
+
 .navbar-buttons {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 8px;
 }
 
-/* Primary Buttons */
 .nav-btn {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  background: linear-gradient(
-    135deg,
-    #3b82f6,
-    #60a5fa
-  ); /* soft blue gradient */
-  border: none;
-  color: #f3f4f6;
-  padding: 0.45rem 1rem;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  padding: 8px 16px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  font-size: 0.875rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
+
 .nav-btn:hover {
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
+  background: rgba(37, 99, 235, 0.15);
+  border-color: rgba(37, 99, 235, 0.3);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
-/* Danger / Logout Buttons */
 .nav-btn.danger {
-  background: linear-gradient(
-    135deg,
-    #2563eb,
-    #3b82f6
-  ); /* softer blue for logout */
-}
-.nav-btn.danger:hover {
-  background: linear-gradient(135deg, #1d4ed8, #2563eb);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.06);
+  color: #475569;
 }
 
-/* Responsive: collapse search on small screens */
+.nav-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  transform: translateY(-1px);
+}
+
 @media (max-width: 768px) {
   .navbar-search {
     display: none;
   }
   .nav-btn {
-    font-size: 0.85rem;
-    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
 }

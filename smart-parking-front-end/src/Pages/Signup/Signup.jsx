@@ -21,7 +21,6 @@ const Signup = () => {
 
   const submitHandler = async e => {
     e.preventDefault();
-
     try {
       await axios.post('/user/signup', form);
       toast.success('Signup successful!');
@@ -33,50 +32,77 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
+      <div className="signup-bg-glow"></div>
+      <div className="signup-bg-grid"></div>
       <div className="signup-box">
+        <div className="signup-logo">
+          <div className="signup-logo-icon">🅿</div>
+          <div className="signup-logo-text">
+            Smart<span>Park</span>
+          </div>
+        </div>
+
         <h2>Create Account</h2>
+        <p className="signup-subheading">
+          Join SmartPark to find parking easily
+        </p>
 
         <form onSubmit={submitHandler}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            value={form.name}
-            onChange={changeHandler}
-            required
-          />
+          <div className="signup-field">
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="John Doe"
+              value={form.name}
+              onChange={changeHandler}
+              required
+            />
+          </div>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={form.email}
-            onChange={changeHandler}
-            required
-          />
+          <div className="signup-field">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              value={form.email}
+              onChange={changeHandler}
+              required
+            />
+          </div>
 
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone Number"
-            value={form.phone}
-            onChange={changeHandler}
-            required
-          />
+          <div className="signup-field">
+            <label>Phone Number</label>
+            <input
+              type="text"
+              name="phone"
+              placeholder="9876543210"
+              value={form.phone}
+              onChange={changeHandler}
+              required
+            />
+          </div>
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={changeHandler}
-            required
-          />
+          <div className="signup-field">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="••••••••"
+              value={form.password}
+              onChange={changeHandler}
+              required
+            />
+          </div>
 
-          <select name="role" value={form.role} onChange={changeHandler}>
-            <option value="user">User</option>
-            <option value="owner">Parking Owner</option>
-          </select>
+          <div className="signup-field">
+            <label>I am a</label>
+            <select name="role" value={form.role} onChange={changeHandler}>
+              <option value="user">User</option>
+              <option value="owner">Parking Owner</option>
+            </select>
+          </div>
 
           <button type="submit" className="primary-btn">
             Create Account
@@ -86,7 +112,7 @@ const Signup = () => {
         <p>
           Already have an account?{' '}
           <span className="login-link" onClick={() => navigate('/login')}>
-            Login
+            Sign in
           </span>
         </p>
       </div>

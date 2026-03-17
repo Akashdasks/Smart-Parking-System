@@ -17,17 +17,13 @@ const Login = () => {
       toast.error('Please fill all fields');
       return;
     }
-
     try {
       const res = await axios.post('/user/login', user);
-
       if (res.data.token) {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('role', res.data.role);
         localStorage.setItem('userId', res.data.userId);
-
         toast.success('Login successful!');
-
         if (res.data.role === 'owner') {
           navigate('/owner/home');
         } else {
@@ -41,34 +37,50 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <div className="login-bg-glow"></div>
+      <div className="login-bg-grid"></div>
       <div className="login-box">
-        <h2>Smart Parking Login</h2>
+        <div className="login-logo">
+          <div className="login-logo-icon">🅿</div>
+          <div className="login-logo-text">
+            Smart<span>Park</span>
+          </div>
+        </div>
+        <h2 className="login-heading">Welcome back</h2>
+        <p className="login-subheading">Sign in to manage your parking</p>
 
-        <input
-          type="text"
-          placeholder="Email"
-          value={user.email}
-          onChange={e => onChange(e, 'email')}
-        />
+        <div className="login-field">
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="you@example.com"
+            value={user.email}
+            onChange={e => onChange(e, 'email')}
+          />
+        </div>
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={user.password}
-          onChange={e => onChange(e, 'password')}
-        />
+        <div className="login-field">
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="••••••••"
+            value={user.password}
+            onChange={e => onChange(e, 'password')}
+          />
+        </div>
 
         <button className="primary-btn" onClick={onBtnClick}>
-          Login
+          Sign In
         </button>
 
-        <p>
-          Don’t have an account? <Link to="/signup">Sign up</Link>
-        </p>
-
-        <p>
-          Forgot Password? <Link to="/forgot-password">Reset</Link>
-        </p>
+        <div className="login-links">
+          <p>
+            Don't have an account? <Link to="/signup">Sign up</Link>
+          </p>
+          <p>
+            Forgot password? <Link to="/forgot-password">Reset it</Link>
+          </p>
+        </div>
       </div>
     </div>
   );

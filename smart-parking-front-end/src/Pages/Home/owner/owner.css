@@ -1,172 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
 .owner-home {
-  padding: 2rem;
-  background: #f8fafc; /* lighter background */
+  padding: 32px 24px;
+  background: #080c14;
   min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
+  color: #fff;
 }
 
-/* Header */
 .owner-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 }
 
 .owner-header h2 {
+  font-family: 'Syne', sans-serif;
   font-size: 1.8rem;
-  color: #1f2937; /* softer dark instead of bright blue */
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+.owner-header h2 span {
+  color: #2563eb;
 }
 
 .add-parking-btn {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background-color: #3b82f6; /* primary button blue */
+  gap: 8px;
+  background: #2563eb;
   color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 10px 20px;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .add-parking-btn:hover {
-  background-color: #2563eb;
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
 }
 
-/* Empty state */
 .empty-state {
   text-align: center;
-  margin-top: 3rem;
-  color: #374151; /* softer dark text */
+  margin-top: 80px;
+  color: #94a3b8;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  margin-bottom: 16px;
 }
 
 .primary-btn {
-  padding: 0.7rem 1.2rem;
+  padding: 12px 24px;
   border: none;
-  border-radius: 8px;
-  background-color: #3b82f6;
+  border-radius: 12px;
+  background: #2563eb;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
   cursor: pointer;
-  margin-top: 1rem;
+  transition: all 0.2s ease;
 }
 
 .primary-btn:hover {
-  background-color: #2563eb;
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
 }
 
-/* Parking grid */
 .parking-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
 }
 
-/* Card */
 .parking-card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: #0d1321 !important;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.2s ease;
+  animation: fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .parking-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(37, 99, 235, 0.6);
+  background: rgba(37, 99, 235, 0.15) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
 }
 
-/* Title */
 .parking-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #1f2937; /* dark gray instead of blue */
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f1f5f9;
   cursor: pointer;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
+  transition: color 0.2s;
 }
 
-/* Address */
+.parking-title:hover {
+  color: #60a5fa;
+}
+
 .address {
-  font-size: 0.9rem;
-  color: #6b7280;
-  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 14px;
+  line-height: 1.4;
 }
 
-/* Stats */
 .stats {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  color: #94a3b8;
 }
 
 .stats input {
   width: 70px;
-  padding: 0.3rem 0.5rem;
-  border-radius: 6px;
-  border: 1px solid #cbd5e1;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  background: rgba(37, 99, 235, 0.1);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
 }
 
-/* Price */
 .price {
-  font-weight: 600;
-  color: #2563eb; /* keep only small accent blue */
-  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #60a5fa;
+  font-size: 1rem;
+  margin-bottom: 16px;
 }
 
-/* Actions */
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
 .card-actions button {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: 0.2s;
+  font-size: 0.85rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .edit-btn {
-  background-color: #60a5fa; /* lighter blue */
-  color: #fff;
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(37, 99, 235, 0.3) !important;
 }
 
 .edit-btn:hover {
-  background-color: #3b82f6; /* slightly darker on hover */
+  background: rgba(37, 99, 235, 0.25);
 }
 
 .save-btn {
-  background-color: #16a34a;
-  color: #fff;
+  background: rgba(22, 163, 74, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(22, 163, 74, 0.3) !important;
 }
 
 .save-btn:hover {
-  background-color: #15803d;
+  background: rgba(22, 163, 74, 0.25);
 }
 
 .cancel-btn {
-  background-color: #ef4444;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 .cancel-btn:hover {
-  background-color: #dc2626;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-/* Loader */
 .loader {
   text-align: center;
-  margin-top: 5rem;
-  font-size: 1.2rem;
-  color: #3b82f6; /* keep a subtle blue accent */
+  margin-top: 80px;
+  font-size: 1rem;
+  color: #94a3b8;
 }
 
 .error {
   text-align: center;
-  margin-top: 5rem;
-  font-size: 1.2rem;
+  margin-top: 80px;
+  font-size: 1rem;
   color: #ef4444;
 }

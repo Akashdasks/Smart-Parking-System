@@ -174,35 +174,33 @@ const UserHome = () => {
   ];
 
   return (
-    <div className="user-home relative p-4 bg-gray-50 min-h-screen">
-      <h2 className="text-2xl font-bold mb-4 text-blue-800">Parkings</h2>
+    <div className="user-home">
+      <div className="user-home-header">
+        <h2 className="user-home-title">
+          Find <span>Parking</span>
+        </h2>
+      </div>
 
-      {/* Filters */}
-      <div className="flex gap-3 mb-4 flex-wrap">
+      <div className="filter-bar">
         <button
-          className={`filter-btn ${
-            filterType === 'all' ? 'active' : 'inactive'
-          }`}
+          className={`filter-btn ${filterType === 'all' ? 'active' : ''}`}
           onClick={handleAllClick}
         >
           All Parkings
         </button>
         <button
-          className={`filter-btn ${
-            filterType === 'nearby' ? 'active' : 'inactive'
-          }`}
+          className={`filter-btn ${filterType === 'nearby' ? 'active' : ''}`}
           onClick={handleNearbyClick}
         >
-          Nearby
+          📍 Nearby
         </button>
       </div>
 
-      {/* Map */}
-      <div className="map-container mb-6">
+      <div className="map-container">
         <MapContainer
           center={[20.5937, 78.9629]}
           zoom={13}
-          style={{ height: '300px', width: '100%' }} // smaller height
+          style={{ height: '100%', width: '100%' }}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {userLocation && (
@@ -220,7 +218,16 @@ const UserHome = () => {
                 <br />₹{p.pricePerHour} / hour
                 <br />
                 <button
-                  className="mt-1 px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-500 text-sm"
+                  style={{
+                    marginTop: '6px',
+                    padding: '4px 10px',
+                    background: '#2563eb',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontSize: '12px',
+                  }}
                   onClick={() => navigate(`/user/parking/${p._id}`)}
                 >
                   View Details
@@ -232,10 +239,9 @@ const UserHome = () => {
         </MapContainer>
       </div>
 
-      {/* Parking Cards */}
       <div className="parking-list">
         {displayParkings.length === 0 ? (
-          <p className="text-center text-gray-500">No parkings found</p>
+          <p className="no-parkings">No parkings found</p>
         ) : (
           displayParkings.map(p => (
             <ParkingCard
@@ -247,21 +253,17 @@ const UserHome = () => {
         )}
       </div>
 
-      {/* AI Section */}
       {aiParkings.length > 0 && showAI && (
         <div className="ai-section">
-          <div className="flex justify-between items-center mb-2">
-            <h3 className="flex items-center gap-2 text-blue-800">
-              🤖 AI Recommended
-            </h3>
-            <span
-              className="close-btn text-gray-500 hover:text-blue-700"
-              onClick={() => setShowAI(false)} // manual close
-            >
+          <div className="ai-section-header">
+            <div className="ai-section-title">
+              🤖 <span>AI</span> Recommended
+            </div>
+            <span className="close-btn" onClick={() => setShowAI(false)}>
               ✕
             </span>
           </div>
-          <div className="ai-list flex flex-col gap-2">
+          <div className="ai-list">
             {aiParkings.map(p => (
               <ParkingCard
                 key={p._id}

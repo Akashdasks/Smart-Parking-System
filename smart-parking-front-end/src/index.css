@@ -1,0 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #080c14;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
