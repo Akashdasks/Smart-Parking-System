@@ -49,11 +49,9 @@ const getDistanceInKm = (lat1, lng1, lat2, lng2) => {
 const UserHome = () => {
   const [parkings, setParkings] = useState([]);
   const [displayParkings, setDisplayParkings] = useState([]);
-  const [aiParkings, setAiParkings] = useState([]);
   const [userLocation, setUserLocation] = useState(null);
   const [filterType, setFilterType] = useState('all');
   const [loading, setLoading] = useState(true);
-  const [showAI, setShowAI] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -78,23 +76,6 @@ const UserHome = () => {
   }, []);
 
   // Fetch AI recommended parkings
-  useEffect(() => {
-    const fetchAIParkings = async () => {
-      if (!navigator.geolocation) return;
-      navigator.geolocation.getCurrentPosition(async pos => {
-        try {
-          const { latitude, longitude } = pos.coords;
-          const res = await axios.get(
-            `/ai/recommend?lat=${latitude}&lng=${longitude}`
-          );
-          setAiParkings(res.data);
-        } catch (err) {
-          console.error('AI parking fetch failed', err);
-        }
-      });
-    };
-    fetchAIParkings();
-  }, []);
 
   // Search filter
   useEffect(() => {
@@ -152,18 +133,6 @@ const UserHome = () => {
     setFilterType('all');
     setUserLocation(null);
   };
-  // Show AI for limited time (e.g., 5 seconds)
-  useEffect(() => {
-    if (aiParkings.length === 0) return;
-
-    setShowAI(true); // show AI
-
-    const timer = setTimeout(() => {
-      setShowAI(false); // hide after 5 seconds
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, [aiParkings]);
 
   if (loading)
     return <p className="loading text-center mt-10">Loading parkings...</p>;
@@ -252,28 +221,6 @@ const UserHome = () => {
           ))
         )}
       </div>
-
-      {aiParkings.length > 0 && showAI && (
-        <div className="ai-section">
-          <div className="ai-section-header">
-            <div className="ai-section-title">
-              🤖 <span>AI</span> Recommended
-            </div>
-            <span className="close-btn" onClick={() => setShowAI(false)}>
-              ✕
-            </span>
-          </div>
-          <div className="ai-list">
-            {aiParkings.map(p => (
-              <ParkingCard
-                key={p._id}
-                parking={{ ...p, isAI: true }}
-                onClick={() => navigate(`/user/parking/${p._id}`)}
-              />
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 };
